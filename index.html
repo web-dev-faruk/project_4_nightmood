@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="button.css">
+</head>
+<body style= "background-color: white;">
+    <!-- button -->
+        <div id="mood">
+            <svg id="buttonSVG" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+                <style type="text/css">
+                .st0{fill:url(#SVGID_1_);}
+                .st1{fill:url(#SVGID_2_);}
+                </style>
+                <g>
+                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="77.5" y1="400" x2="722.5" y2="400">
+                        <stop  offset="0" style="stop-color:#3FFCFF"/>
+                        <stop  offset="0.1321" style="stop-color:#3AF3F9"/>
+                        <stop  offset="0.3509" style="stop-color:#2ED9EA"/>
+                        <stop  offset="0.5674" style="stop-color:#1EBAD7"/>
+                        <stop  offset="0.8652" style="stop-color:#00A8BE"/>
+                        <stop  offset="0.9944" style="stop-color:#0F8297"/>
+                    </linearGradient>
+                <path class="st0" d="M682.5,465h-565c-22.09,0-40-17.91-40-40v-50c0-22.09,17.91-40,40-40h565c22.09,0,40,17.91,40,40v50
+                    C722.5,447.09,704.59,465,682.5,465z"/>
+                </g>
+                <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="24" y1="399.5" x2="219" y2="399.5">
+                    <stop  offset="0" style="stop-color:#3FFCFF"/>
+                    <stop  offset="0.1321" style="stop-color:#3AF3F9"/>
+                    <stop  offset="0.3509" style="stop-color:#2ED9EA"/>
+                    <stop  offset="0.5674" style="stop-color:#1EBAD7"/>
+                    <stop  offset="0.8652" style="stop-color:#00A8BE"/>
+                    <stop  offset="0.9944" style="stop-color:#0F8297"/>
+                </linearGradient>
+                <circle  id="buttonCircle" class="st1" onclick="moveC()" style="transform: translateX(0%);" cx="121.5" cy="399.5" r="97.5"/>
+            </svg>
+            
+            <p id='moodhead'>
+                Light Mood
+            </p>
+        </div>
+    <!-- button end -->
+    <script>
+        // button
+        function moveC(){
+            const backgroundStyle= document.body.style;
+            const buttonStyle= document.getElementById(`buttonCircle`).style;
+            if (buttonStyle.transform == `translateX(0%)`) {
+                buttonStyle.transform = `translateX(70%)`;
+                backgroundStyle.backgroundColor = 'black';
+
+                document.getElementById("moodhead").style.color='white';
+                document.getElementById("moodhead").innerHTML="Night Mood";
+            }else if(buttonStyle.transform == `translateX(70%)`){
+                buttonStyle.transform = `translateX(0%)`;
+                backgroundStyle.backgroundColor="white";
+
+                document.getElementById("moodhead").style.color='black';
+                document.getElementById("moodhead").innerHTML="Light Mood";
+            }
+          
+        }
+        // button end
+    </script>
+</body>
+</html>
